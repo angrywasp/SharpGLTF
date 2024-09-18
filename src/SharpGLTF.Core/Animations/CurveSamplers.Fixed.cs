@@ -9,7 +9,7 @@ namespace SharpGLTF.Animations
     /// Represents a special sampler for single values.
     /// </summary>
     /// <typeparam name="T">The sample type.</typeparam>
-    readonly struct FixedSampler<T> :
+    public readonly struct FixedSampler<T> :
         ICurveSampler<T>,
         IConvertibleCurve<T>
     {

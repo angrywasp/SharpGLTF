@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SharpGLTF.Animations
 {
-    readonly struct LinearSampler<T> :
+    public readonly struct LinearSampler<T> :
         ICurveSampler<T>,
         IConvertibleCurve<T>
     {
@@ -40,6 +40,8 @@ namespace SharpGLTF.Animations
         #endregion
 
         #region API
+
+        public IEnumerable<(float Key, T Value)> Sequence => _Sequence;
 
         public T GetPoint(float offset)
         {

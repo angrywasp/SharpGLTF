@@ -9,7 +9,7 @@ namespace SharpGLTF.Animations
     /// Wraps a collection of samplers split over time to speed up key retrieval.
     /// </summary>
     /// <typeparam name="T">The value sampled at any offset</typeparam>
-    readonly struct FastCurveSampler<T> : ICurveSampler<T>
+    public readonly struct FastCurveSampler<T> : ICurveSampler<T>
     {
         /// <summary>
         /// Creates a new, read only <see cref="ICurveSampler{T}"/> that has been optimized for fast sampling.
@@ -35,13 +35,15 @@ namespace SharpGLTF.Animations
             return new FastCurveSampler<T>(split);
         }
 
-        private FastCurveSampler(IEnumerable<ICurveSampler<T>> samplers)
+        public FastCurveSampler(IEnumerable<ICurveSampler<T>> samplers)
         {
             _Samplers = samplers.ToArray();
         }
 
         [System.Diagnostics.DebuggerBrowsable(System.Diagnostics.DebuggerBrowsableState.RootHidden)]
         private readonly ICurveSampler<T>[] _Samplers;
+
+        public ICurveSampler<T>[] Samplers => _Samplers;
 
         public T GetPoint(float offset)
         {

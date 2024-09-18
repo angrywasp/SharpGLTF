@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SharpGLTF.Animations
 {
-    readonly struct CubicSampler<T> :
+    public readonly struct CubicSampler<T> :
         ICurveSampler<T>,
         IConvertibleCurve<T>
     {
@@ -44,6 +44,8 @@ namespace SharpGLTF.Animations
         #endregion
 
         #region API
+
+        public IEnumerable<(float Key, (T TangentIn, T Value, T TangentOut))> Sequence => _Sequence;
 
         public int MaxDegree => 3;
 

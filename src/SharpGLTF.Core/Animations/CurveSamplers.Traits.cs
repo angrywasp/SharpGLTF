@@ -9,14 +9,14 @@ using SPARSE = SharpGLTF.Transforms.SparseWeight8;
 
 namespace SharpGLTF.Animations
 {
-    interface ISamplerTraits<T>
+    public interface ISamplerTraits<T>
     {
         T Clone(T value);
         T InterpolateLinear(T left, T right, float amount);
         T InterpolateCubic(T start, T outgoingTangent, T end, T incomingTangent, Single amount);
     }
 
-    static class SamplerTraits
+    public static class SamplerTraits
     {
         sealed class _Vector3 : ISamplerTraits<Vector3>
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SharpGLTF.Animations
 {
-    readonly struct StepSampler<T> :
+    public readonly struct StepSampler<T> :
         ICurveSampler<T>,
         IConvertibleCurve<T>
     {
@@ -42,6 +42,8 @@ namespace SharpGLTF.Animations
         #endregion
 
         #region API
+
+        public IEnumerable<(float Key, T Value)> Sequence => _Sequence;
 
         public T GetPoint(float offset)
         {
