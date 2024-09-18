@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   
   <PropertyGroup>
     <TargetFrameworks>net471;net6.0;net8.0</TargetFrameworks>
@@ -11,7 +11,7 @@
     <PackageReference Include="NUnit" Version="4.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="GltfValidator" Version="2.0.0-dev.3.8.202311262112" />    
-    <PackageReference Include="TestAttachments.NUnit" Version="4.0.0-Preview-20240102-0955" />    
+    <PackageReference Include="TestAttachments.NUnit" Version="4.0.0-preview-20240102-0955" />    
   </ItemGroup>
 
   <ItemGroup>    
